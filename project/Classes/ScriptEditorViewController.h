@@ -11,8 +11,10 @@
 #define ScriptEvalSegueID		@"ScriptEvalSegueID"
 
 
-@interface ScriptEditorViewController : UIViewController
+@interface ScriptEditorViewController : UIViewController<UITextFieldDelegate, UITextViewDelegate>
 
+@property (nonatomic, strong) IBOutlet UITextField *titleTextField;
+@property (nonatomic, strong) IBOutlet UITextView *contentTextView;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) Script *script;
 

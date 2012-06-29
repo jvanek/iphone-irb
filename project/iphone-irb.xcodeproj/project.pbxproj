@@ -18,6 +18,7 @@
 		8D5498D50F3472B400001578 /* ruby.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D5498D40F3472B400001578 /* ruby.png */; };
 		8D5499770F34AB5100001578 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D5499750F34AB5100001578 /* Default.png */; };
 		8D5499780F34AB5100001578 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D5499760F34AB5100001578 /* icon.png */; };
+		D839E37C159E428C008A2B0C /* ScriptListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D839E37B159E428C008A2B0C /* ScriptListViewCell.m */; };
 		D8D6A144159DD09C0074C263 /* Irb-iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D6A143159DD09C0074C263 /* Irb-iphone.storyboard */; };
 		D8D6A14D159DD3400074C263 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D6A14C159DD3400074C263 /* icon@2x.png */; };
 		D8D6A150159DD3BE0074C263 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D6A14E159DD3BD0074C263 /* icon-ipad.png */; };
@@ -56,6 +57,8 @@
 		8D5498D40F3472B400001578 /* ruby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ruby.png; path = Resources/ruby.png; sourceTree = "<group>"; };
 		8D5499750F34AB5100001578 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8D5499760F34AB5100001578 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		D839E37A159E428C008A2B0C /* ScriptListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptListViewCell.h; sourceTree = "<group>"; };
+		D839E37B159E428C008A2B0C /* ScriptListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptListViewCell.m; sourceTree = "<group>"; };
 		D8D6A143159DD09C0074C263 /* Irb-iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Irb-iphone.storyboard"; path = "Resources/Irb-iphone.storyboard"; sourceTree = "<group>"; };
 		D8D6A14C159DD3400074C263 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		D8D6A14E159DD3BD0074C263 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ipad.png"; sourceTree = "<group>"; };
@@ -182,6 +185,61 @@
 			path = ruby;
 			sourceTree = "<group>";
 		};
+		D839E375159E4236008A2B0C /* Menu View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8D6A195159DF3F80074C263 /* MenuViewController.h */,
+				D8D6A196159DF3F80074C263 /* MenuViewController.m */,
+			);
+			name = "Menu View Controller";
+			sourceTree = "<group>";
+		};
+		D839E376159E4240008A2B0C /* Irb View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28D7ACF60DDB3853001CB0EB /* IrbViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* IrbViewController.m */,
+			);
+			name = "Irb View Controller";
+			sourceTree = "<group>";
+		};
+		D839E377159E424B008A2B0C /* Script List View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D839E37D159E4294008A2B0C /* Script List View Cell */,
+				D8D6A182159DEF390074C263 /* ScriptListViewController.h */,
+				D8D6A183159DEF390074C263 /* ScriptListViewController.m */,
+			);
+			name = "Script List View Controller";
+			sourceTree = "<group>";
+		};
+		D839E378159E4258008A2B0C /* Script Editor View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8D6A198159DFB060074C263 /* ScriptEditorViewController.h */,
+				D8D6A199159DFB060074C263 /* ScriptEditorViewController.m */,
+			);
+			name = "Script Editor View Controller";
+			sourceTree = "<group>";
+		};
+		D839E379159E4265008A2B0C /* Script Eval View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8D6A1A0159E06370074C263 /* ScriptEvalViewController.h */,
+				D8D6A1A1159E06370074C263 /* ScriptEvalViewController.m */,
+			);
+			name = "Script Eval View Controller";
+			sourceTree = "<group>";
+		};
+		D839E37D159E4294008A2B0C /* Script List View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D839E37A159E428C008A2B0C /* ScriptListViewCell.h */,
+				D839E37B159E428C008A2B0C /* ScriptListViewCell.m */,
+			);
+			name = "Script List View Cell";
+			sourceTree = "<group>";
+		};
 		D8D6A14A159DD2990074C263 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,16 +273,11 @@
 		D8D6A181159DEEF90074C263 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D8D6A195159DF3F80074C263 /* MenuViewController.h */,
-				D8D6A196159DF3F80074C263 /* MenuViewController.m */,
-				28D7ACF60DDB3853001CB0EB /* IrbViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* IrbViewController.m */,
-				D8D6A182159DEF390074C263 /* ScriptListViewController.h */,
-				D8D6A183159DEF390074C263 /* ScriptListViewController.m */,
-				D8D6A198159DFB060074C263 /* ScriptEditorViewController.h */,
-				D8D6A199159DFB060074C263 /* ScriptEditorViewController.m */,
-				D8D6A1A0159E06370074C263 /* ScriptEvalViewController.h */,
-				D8D6A1A1159E06370074C263 /* ScriptEvalViewController.m */,
+				D839E375159E4236008A2B0C /* Menu View Controller */,
+				D839E376159E4240008A2B0C /* Irb View Controller */,
+				D839E377159E424B008A2B0C /* Script List View Controller */,
+				D839E378159E4258008A2B0C /* Script Editor View Controller */,
+				D839E379159E4265008A2B0C /* Script Eval View Controller */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -312,6 +365,7 @@
 				D8D6A197159DF3F80074C263 /* MenuViewController.m in Sources */,
 				D8D6A19A159DFB060074C263 /* ScriptEditorViewController.m in Sources */,
 				D8D6A1A2159E06370074C263 /* ScriptEvalViewController.m in Sources */,
+				D839E37C159E428C008A2B0C /* ScriptListViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

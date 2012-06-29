@@ -7,6 +7,8 @@
 //
 
 #import "ScriptEvalViewController.h"
+#import "EvalRuby.h"
+
 
 @interface ScriptEvalViewController ()
 
@@ -14,21 +16,30 @@
 
 @implementation ScriptEvalViewController
 
-@synthesize script;
+@synthesize script, resultView;
 
+- (void)dealloc {
+	self.script = nil;
+	self.resultView = nil;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+	self.script = nil;
+	self.resultView = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	self.resultView.text = [[EvalRuby sharedInstance] eval:self.script.content];
 }
 
 @end

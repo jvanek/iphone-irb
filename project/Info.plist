@@ -29,7 +29,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>org.natsulion.irb</string>
+	<string>com.pallas-software.irb</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

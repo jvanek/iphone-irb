@@ -11,6 +11,7 @@
 
 @interface ScriptEvalViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UITextView *resultView;
 @property (nonatomic, strong) Script *script;
 
 @end

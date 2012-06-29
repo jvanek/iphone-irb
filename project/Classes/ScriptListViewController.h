@@ -7,7 +7,6 @@
 //
 
 
-#define ScriptCellID			@"ScriptCellID"
 #define ScriptEditorSegueID		@"ScriptEditorSegueID"
 
 

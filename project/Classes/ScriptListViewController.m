@@ -9,13 +9,10 @@
 #import "ScriptListViewController.h"
 #import "Script.h"
 #import "ScriptEditorViewController.h"
-
+#import "ScriptListViewCell.h"
 
 
 @interface ScriptListViewController ()
-
-@property (nonatomic, strong) NSDateFormatter *dateFormatter;
-@property (nonatomic, strong) Script *selectedScript;
 
 - (void)addNewScript:(UIBarButtonItem *)sender;
 - (void)reloadData;
@@ -28,21 +25,19 @@
 @implementation ScriptListViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
-@synthesize managedObjectContext, dateFormatter, selectedScript;
+@synthesize managedObjectContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-	self.dateFormatter = [[NSDateFormatter alloc] init];
-	self.dateFormatter.formatterBehavior = NSDateFormatterBehavior10_4;
-	self.dateFormatter.dateFormat = @"dd/MM/yyyy";
 
     // Uncomment the following line to preserve selection between presentations.
 	self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 	//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewScript:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+																						   target:self
+																						   action:@selector(addNewScript:)];
 	[self reloadData];
 }
 
@@ -51,8 +46,12 @@
 	self.fetchedResultsController = nil;
 	if ([self.managedObjectContext hasChanges]) [self.managedObjectContext reset];
 	self.managedObjectContext = nil;
-	self.dateFormatter = nil;
-	self.selectedScript = nil;
+}
+
+- (void)dealloc {
+	self.fetchedResultsController.delegate = nil;
+	self.fetchedResultsController = nil;
+	self.managedObjectContext = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -61,8 +60,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([ScriptEditorSegueID isEqualToString:segue.identifier]) {
+		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+		Script *selectedScript = [self.fetchedResultsController objectAtIndexPath:indexPath];
 		((ScriptEditorViewController *)segue.destinationViewController).managedObjectContext = self.managedObjectContext;
-		((ScriptEditorViewController *)segue.destinationViewController).script = self.selectedScript;
+		((ScriptEditorViewController *)segue.destinationViewController).script = selectedScript;
 	}
 }
 
@@ -98,14 +99,11 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 	Script *aScript = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = aScript.title;
-	if (aScript.modifDate != nil) cell.detailTextLabel.text = [self.dateFormatter stringFromDate:aScript.modifDate];
-	else cell.detailTextLabel.text = LOCALIZED_STRING(@"New");
+	[(ScriptListViewCell *)cell updateWithScript:aScript];
 }
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
@@ -116,9 +114,6 @@
 		[self.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
 		[self reloadData];
         [aTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
 
@@ -136,9 +131,7 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
 	[aTableView deselectRowAtIndexPath:indexPath animated:YES];
-	self.selectedScript = [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
 #pragma mark - Private methods
