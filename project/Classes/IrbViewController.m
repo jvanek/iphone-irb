@@ -1,9 +1,9 @@
 
-#import "iphone_irbViewController.h"
+#import "IrbViewController.h"
 #import "EvalRuby.h"
 
 
-@implementation iphone_irbViewController
+@implementation IrbViewController
 
 @synthesize inputTextField, resultTextView;
 

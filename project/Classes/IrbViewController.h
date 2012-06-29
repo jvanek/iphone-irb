@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface iphone_irbViewController : UIViewController
+@interface IrbViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UITextView *resultTextView;
 @property (nonatomic, strong) IBOutlet UITextField *inputTextField;
