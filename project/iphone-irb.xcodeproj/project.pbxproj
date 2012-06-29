@@ -35,6 +35,7 @@
 		D8D6A184159DEF390074C263 /* ScriptListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6A183159DEF390074C263 /* ScriptListViewController.m */; };
 		D8D6A197159DF3F80074C263 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6A196159DF3F80074C263 /* MenuViewController.m */; };
 		D8D6A19A159DFB060074C263 /* ScriptEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6A199159DFB060074C263 /* ScriptEditorViewController.m */; };
+		D8D6A1A2159E06370074C263 /* ScriptEvalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6A1A1159E06370074C263 /* ScriptEvalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		D8D6A196159DF3F80074C263 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		D8D6A198159DFB060074C263 /* ScriptEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptEditorViewController.h; sourceTree = "<group>"; };
 		D8D6A199159DFB060074C263 /* ScriptEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptEditorViewController.m; sourceTree = "<group>"; };
+		D8D6A1A0159E06370074C263 /* ScriptEvalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptEvalViewController.h; sourceTree = "<group>"; };
+		D8D6A1A1159E06370074C263 /* ScriptEvalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptEvalViewController.m; sourceTree = "<group>"; };
 		D8E78D7F159DA538006394F7 /* iRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iRuby.framework; path = ruby/iRuby.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,6 +223,8 @@
 				D8D6A183159DEF390074C263 /* ScriptListViewController.m */,
 				D8D6A198159DFB060074C263 /* ScriptEditorViewController.h */,
 				D8D6A199159DFB060074C263 /* ScriptEditorViewController.m */,
+				D8D6A1A0159E06370074C263 /* ScriptEvalViewController.h */,
+				D8D6A1A1159E06370074C263 /* ScriptEvalViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				D8D6A184159DEF390074C263 /* ScriptListViewController.m in Sources */,
 				D8D6A197159DF3F80074C263 /* MenuViewController.m in Sources */,
 				D8D6A19A159DFB060074C263 /* ScriptEditorViewController.m in Sources */,
+				D8D6A1A2159E06370074C263 /* ScriptEvalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

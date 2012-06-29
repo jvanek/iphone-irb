@@ -191,7 +191,7 @@
                     <navigationItem key="navigationItem" title="Script Editor" id="bo3-52-pRs">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="b4P-x4-hDJ">
                             <connections>
-                                <segue destination="mHW-21-QGt" kind="push" id="CqR-jh-6AS"/>
+                                <segue destination="mHW-21-QGt" kind="push" identifier="ScriptEvalSegueID" id="CqR-jh-6AS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -200,11 +200,11 @@
             </objects>
             <point key="canvasLocation" x="1014" y="550"/>
         </scene>
-        <!--View Controller - Results-->
+        <!--Script Eval View Controller - Results-->
         <scene sceneID="A1D-YO-Zp9">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1K2-b0-QLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="mHW-21-QGt" sceneMemberID="viewController">
+                <viewController id="mHW-21-QGt" customClass="ScriptEvalViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rZa-ZZ-YUo">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -234,6 +234,9 @@
         </class>
         <class className="ScriptEditorViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScriptEditorViewController.h"/>
+        </class>
+        <class className="ScriptEvalViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScriptEvalViewController.h"/>
         </class>
         <class className="ScriptListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ScriptListViewController.h"/>

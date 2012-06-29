@@ -8,6 +8,8 @@
 
 #import "Script.h"
 
+#define ScriptEvalSegueID		@"ScriptEvalSegueID"
+
 
 @interface ScriptEditorViewController : UIViewController
 

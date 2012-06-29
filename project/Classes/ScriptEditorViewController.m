@@ -7,6 +7,8 @@
 //
 
 #import "ScriptEditorViewController.h"
+#import "ScriptEvalViewController.h"
+
 
 @interface ScriptEditorViewController ()
 
@@ -36,6 +38,12 @@
 
 	NSError *err = nil;
 	if ([self.managedObjectContext hasChanges]) [self.managedObjectContext save:&err];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([ScriptEvalSegueID isEqualToString:segue.identifier]) {
+		((ScriptEvalViewController *)segue.destinationViewController).script = self.script;
+	}
 }
 
 @end

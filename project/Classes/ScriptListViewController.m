@@ -113,6 +113,8 @@
 - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+		[self.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+		[self reloadData];
         [aTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -120,14 +122,15 @@
     }   
 }
 
+/*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
 }
+*/
 
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    return NO;
 }
 
 #pragma mark - Table view delegate
@@ -142,6 +145,7 @@
 
 - (void)addNewScript:(UIBarButtonItem *)sender {
 	[NSEntityDescription insertNewObjectForEntityForName:SCRIPT_ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
+	[self reloadData];
 	[self.tableView reloadData];
 }
 
@@ -150,7 +154,7 @@
 	if (![self.fetchedResultsController performFetch:&error]) {
 		if (error != nil) {
 			LOG_ERROR(@"Error when fetching scripts: %@", [error localizedDescription]);
-		}
+		} else LOG_DEBUG(@"No scripts in database");
 	}
 }
 
