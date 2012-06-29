@@ -20,6 +20,11 @@
 				<string>icon@2.png</string>
 				<string>icon-ipad.png</string>
 				<string>icon-ipad@2.png</string>
+				<string>icon-ipad@2x.png</string>
+				<string>icon@2x.png</string>
+				<string>Default@2x.png</string>
+				<string>Default-Portrait~ipad.png</string>
+				<string>Default-Portrait@2x~ipad.png</string>
 			</array>
 		</dict>
 	</dict>
@@ -39,7 +44,23 @@
 	<true/>
 	<key>UIMainStoryboardFile</key>
 	<string>Irb-iphone</string>
+	<key>UIMainStoryboardFile~ipad</key>
+	<string>Irb-ipad</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleBlackOpaque</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
 </dict>
 </plist>
