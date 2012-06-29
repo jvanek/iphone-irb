@@ -8,3 +8,5 @@ build
 *~.nib
 *.xcodeproj/*.perspectivev3
 *.xcodeproj/*.pbxuser
+
+project/iphone-irb.xcodeproj/project.xcworkspace/xcuserdata/joe.xcuserdatad/UserInterfaceState.xcuserstate

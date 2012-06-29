@@ -1,6 +1,6 @@
 #import "EvalRuby.h"
 #import "SharedInstance.h"
-#import "ruby.h"
+#import <iRuby/ruby.h>
 
 static EvalRuby *sharedInstance;
 
@@ -9,18 +9,11 @@ static EvalRuby *sharedInstance;
 SHARED_INSTANCE_IMPL
 
 - (void)rubyInit {
-#if TARGET_IPHONE_SIMULATOR
-#else
 	ruby_init();
-#endif
 }
 
 
 - (NSString*)eval:(NSString*)code {
-#if TARGET_IPHONE_SIMULATOR
-	return @"cannot eval on not TARGET_OS_IPHONE";
-#else
-
 #define INSPECT_SCRIPT @"begin; (%@).inspect; rescue ScriptError, StandardError; 'Error: ' + ($! || 'exception raised'); end"
 
 	VALUE obj;
@@ -37,7 +30,6 @@ SHARED_INSTANCE_IMPL
 		result = @"exception raised"; 
 	}
 	return [NSString stringWithFormat:@"%@ #=>\n%@", code, result];
-#endif
 }
 
 @end
