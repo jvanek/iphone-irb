@@ -1,23 +1,23 @@
-#import "iphone_irbViewController.h"
 
+#import "iphone_irbViewController.h"
 #import "EvalRuby.h"
+
+
 @implementation iphone_irbViewController
 
-- (void)dealloc {
-    [super dealloc];
-}
+@synthesize inputTextField, resultTextView;
 
 - (void)viewWillAppear:(BOOL)animated {
-	[inputTextField becomeFirstResponder];
-	resultTextView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+	[self.inputTextField becomeFirstResponder];
+	self.resultTextView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 }
 
 - (IBAction)onPushEval:(id)sender {
 	NSString *s = [NSString stringWithFormat:@"%@\n%@", 
-					[[EvalRuby sharedInstance] eval:inputTextField.text],
-					resultTextView.text];
-	resultTextView.text = s;
-	inputTextField.text = @"";
+					[[EvalRuby sharedInstance] eval:self.inputTextField.text],
+					self.resultTextView.text];
+	self.resultTextView.text = s;
+	self.inputTextField.text = @"";
 }
 
 @end

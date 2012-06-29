@@ -1,17 +1,33 @@
 #import "EvalRuby.h"
-#import "SharedInstance.h"
 #import <iRuby/ruby.h>
 
-static EvalRuby *sharedInstance;
+
+@interface EvalRuby()
+
+- (void)setup;
+
+@end
+
 
 @implementation EvalRuby
 
-SHARED_INSTANCE_IMPL
++ (id)sharedInstance { 
+    static dispatch_once_t pred = 0; 
+    __strong static EvalRuby *_sharedDataObject = nil;
+    dispatch_once(&pred, ^{
+		_sharedDataObject = [self new];
+		[_sharedDataObject setup];
+    });	
+    return _sharedDataObject;
+}
+
+- (void)setup {
+	
+}
 
 - (void)rubyInit {
 	ruby_init();
 }
-
 
 - (NSString*)eval:(NSString*)code {
 #define INSPECT_SCRIPT @"begin; (%@).inspect; rescue ScriptError, StandardError; 'Error: ' + ($! || 'exception raised'); end"
