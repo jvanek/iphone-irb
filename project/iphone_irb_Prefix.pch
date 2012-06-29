@@ -5,4 +5,42 @@
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
+	#import <CoreData/CoreData.h>
 #endif
+#import "IrbAppDelegate.h"
+
+
+// Shortcuts
+#define NOTIFICATION_CENTER [NSNotificationCenter defaultCenter]
+#define FILE_MANAGER [NSFileManager defaultManager]
+#define MAIN_BUNDLE [NSBundle mainBundle]
+#define MAIN_THREAD [NSThread mainThread]
+#define USER_DEFAULTS [NSUserDefaults standardUserDefaults]
+#define APP_DELEGATE ((IrbAppDelegate *)[[UIApplication sharedApplication] delegate])
+
+// Core data
+#define PERSISTENT_STORE_COORDINATOR [APP_DELEGATE persistentStoreCoordinator]
+#define MANAGED_OBJECT_CONTEXT [APP_DELEGATE managedObjectContext]
+
+// Files
+#define PATH_DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+#define PATH_FOR_RESOURCE(file, ext) [MAIN_BUNDLE pathForResource:file ofType:ext]
+
+//Localization
+#define LOCALIZED_STRING(key) NSLocalizedString(key, nil)
+
+// Alert
+#define ALERT(title, message) ([APP_DELEGATE alertWithTitle:(title) andMessage:(message)])
+#define ALERT_ERROR(message) ([APP_DELEGATE alertWithTitle:LOCALIZED_STRING(@"globals.error") andMessage:(message)])
+#define ALERT_INFO(message) ([APP_DELEGATE alertWithTitle:LOCALIZED_STRING(@"globals.info") andMessage:(message)])
+#define ALERT_WARNING(message) ([APP_DELEGATE alertWithTitle:LOCALIZED_STRING(@"globals.warning") andMessage:(message)])
+
+// Utilities
+#define IS_EMPTY_STRING(string) ((string) == nil || [(string) length] == 0)
+#define LOG_DEBUG(fmt,...) NSLog((@"DEBUG %s : " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
+#define LOG_INFO(fmt,...) NSLog((@"INFO  %s : " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
+#define LOG_WARN(fmt,...) NSLog((@"WARN  %s : " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
+#define LOG_ERROR(fmt,...) NSLog((@"ERROR %s : " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
+
+// Strings
+#define IS_NOT_EMPTY_STRING(str) ((str != nil) && ([str length] > 0))

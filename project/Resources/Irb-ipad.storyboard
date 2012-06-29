@@ -25,7 +25,10 @@
                                             <rect key="frame" x="70" y="7" width="628" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="23Z-Hs-05F" id="hTr-Ni-JZl"/>
+                                            </connections>
                                         </textField>
                                         <barButtonItem key="rightBarButtonItem" title="eval" id="YM0-gJ-H6n">
                                             <connections>

@@ -28,6 +28,13 @@
 		D8D6A15D159DD7510074C263 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D6A15C159DD7500074C263 /* Default-Portrait@2x~ipad.png */; };
 		D8D6A15F159DD8330074C263 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D6A15E159DD8330074C263 /* Default-Landscape~ipad.png */; };
 		D8D6A161159DD86A0074C263 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D6A160159DD86A0074C263 /* Default-Landscape@2x~ipad.png */; };
+		D8D6A164159DE9CC0074C263 /* IrbModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8D6A162159DE9CC0074C263 /* IrbModel.xcdatamodeld */; };
+		D8D6A168159DEA5D0074C263 /* Script.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6A167159DEA5D0074C263 /* Script.m */; };
+		D8D6A16B159DEA960074C263 /* GenericManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6A16A159DEA960074C263 /* GenericManagedObject.m */; };
+		D8D6A180159DEC890074C263 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6A17F159DEC890074C263 /* CoreData.framework */; };
+		D8D6A184159DEF390074C263 /* ScriptListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6A183159DEF390074C263 /* ScriptListViewController.m */; };
+		D8D6A197159DF3F80074C263 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6A196159DF3F80074C263 /* MenuViewController.m */; };
+		D8D6A19A159DFB060074C263 /* ScriptEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D6A199159DFB060074C263 /* ScriptEditorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +65,18 @@
 		D8D6A15C159DD7500074C263 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		D8D6A15E159DD8330074C263 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		D8D6A160159DD86A0074C263 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		D8D6A163159DE9CC0074C263 /* IrbModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IrbModel.xcdatamodel; sourceTree = "<group>"; };
+		D8D6A166159DEA5D0074C263 /* Script.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Script.h; path = CoreData/Script.h; sourceTree = "<group>"; };
+		D8D6A167159DEA5D0074C263 /* Script.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Script.m; path = CoreData/Script.m; sourceTree = "<group>"; };
+		D8D6A169159DEA960074C263 /* GenericManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericManagedObject.h; path = CoreData/GenericManagedObject.h; sourceTree = "<group>"; };
+		D8D6A16A159DEA960074C263 /* GenericManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenericManagedObject.m; path = CoreData/GenericManagedObject.m; sourceTree = "<group>"; };
+		D8D6A17F159DEC890074C263 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D8D6A182159DEF390074C263 /* ScriptListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptListViewController.h; sourceTree = "<group>"; };
+		D8D6A183159DEF390074C263 /* ScriptListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptListViewController.m; sourceTree = "<group>"; };
+		D8D6A195159DF3F80074C263 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		D8D6A196159DF3F80074C263 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		D8D6A198159DFB060074C263 /* ScriptEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptEditorViewController.h; sourceTree = "<group>"; };
+		D8D6A199159DFB060074C263 /* ScriptEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptEditorViewController.m; sourceTree = "<group>"; };
 		D8E78D7F159DA538006394F7 /* iRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iRuby.framework; path = ruby/iRuby.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D6A180159DEC890074C263 /* CoreData.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -79,10 +99,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D8D6A165159DEA3F0074C263 /* Eos */,
+				D8D6A181159DEEF90074C263 /* View Controllers */,
 				1D3623240D0F684500981E51 /* IrbAppDelegate.h */,
 				1D3623250D0F684500981E51 /* IrbAppDelegate.m */,
-				28D7ACF60DDB3853001CB0EB /* IrbViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* IrbViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -98,7 +118,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				8D5498860F346F3E00001578 /* ruby */,
+				8D5498860F346F3E00001578 /* Ruby */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -131,6 +151,7 @@
 				8D1107310486CEB800E47090 /* Info.plist */,
 				D8D6A143159DD09C0074C263 /* Irb-iphone.storyboard */,
 				D8D6A152159DD40D0074C263 /* Irb-ipad.storyboard */,
+				D8D6A162159DE9CC0074C263 /* IrbModel.xcdatamodeld */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -139,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				8D54988D0F346F3E00001578 /* libruby-static.a */,
+				D8D6A17F159DEC890074C263 /* CoreData.framework */,
 				D8E78D7F159DA538006394F7 /* iRuby.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -147,12 +169,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8D5498860F346F3E00001578 /* ruby */ = {
+		8D5498860F346F3E00001578 /* Ruby */ = {
 			isa = PBXGroup;
 			children = (
 				8D54988F0F346F7000001578 /* EvalRuby.h */,
 				8D5498900F346F7000001578 /* EvalRuby.m */,
 			);
+			name = Ruby;
 			path = ruby;
 			sourceTree = "<group>";
 		};
@@ -173,6 +196,32 @@
 				8D5499760F34AB5100001578 /* icon.png */,
 			);
 			name = icons;
+			sourceTree = "<group>";
+		};
+		D8D6A165159DEA3F0074C263 /* Eos */ = {
+			isa = PBXGroup;
+			children = (
+				D8D6A169159DEA960074C263 /* GenericManagedObject.h */,
+				D8D6A16A159DEA960074C263 /* GenericManagedObject.m */,
+				D8D6A166159DEA5D0074C263 /* Script.h */,
+				D8D6A167159DEA5D0074C263 /* Script.m */,
+			);
+			name = Eos;
+			sourceTree = "<group>";
+		};
+		D8D6A181159DEEF90074C263 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D8D6A195159DF3F80074C263 /* MenuViewController.h */,
+				D8D6A196159DF3F80074C263 /* MenuViewController.m */,
+				28D7ACF60DDB3853001CB0EB /* IrbViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* IrbViewController.m */,
+				D8D6A182159DEF390074C263 /* ScriptListViewController.h */,
+				D8D6A183159DEF390074C263 /* ScriptListViewController.m */,
+				D8D6A198159DFB060074C263 /* ScriptEditorViewController.h */,
+				D8D6A199159DFB060074C263 /* ScriptEditorViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +300,12 @@
 				1D3623260D0F684500981E51 /* IrbAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* IrbViewController.m in Sources */,
 				8D5498910F346F7000001578 /* EvalRuby.m in Sources */,
+				D8D6A164159DE9CC0074C263 /* IrbModel.xcdatamodeld in Sources */,
+				D8D6A168159DEA5D0074C263 /* Script.m in Sources */,
+				D8D6A16B159DEA960074C263 /* GenericManagedObject.m in Sources */,
+				D8D6A184159DEF390074C263 /* ScriptListViewController.m in Sources */,
+				D8D6A197159DF3F80074C263 /* MenuViewController.m in Sources */,
+				D8D6A19A159DFB060074C263 /* ScriptEditorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +328,7 @@
 				GCC_PREFIX_HEADER = iphone_irb_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ruby\"",
@@ -297,7 +352,7 @@
 				GCC_PREFIX_HEADER = iphone_irb_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ruby\"",
@@ -315,6 +370,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -328,6 +384,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9FDBFBCE-40E1-4B07-8358-0DDE9BE41080";
 				SDKROOT = iphoneos;
 			};
@@ -355,6 +412,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8D6A162159DE9CC0074C263 /* IrbModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8D6A163159DE9CC0074C263 /* IrbModel.xcdatamodel */,
+			);
+			currentVersion = D8D6A163159DE9CC0074C263 /* IrbModel.xcdatamodel */;
+			name = IrbModel.xcdatamodeld;
+			path = Resources/IrbModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }

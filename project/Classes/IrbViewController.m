@@ -20,4 +20,10 @@
 	self.inputTextField.text = @"";
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	[textField resignFirstResponder];
+	[self onPushEval:nil];
+	return YES;
+}
+
 @end

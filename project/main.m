@@ -3,10 +3,8 @@
 #import "IrbAppDelegate.h"
 
 int main(int argc, char *argv[]) {
-    
-	[[EvalRuby sharedInstance] rubyInit];
-	
     @autoreleasepool {
+		[[EvalRuby sharedInstance] rubyInit];
         int retVal = UIApplicationMain(argc, argv, nil, NSStringFromClass([IrbAppDelegate class]));
         return retVal;
     }
