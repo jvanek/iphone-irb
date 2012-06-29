@@ -30,18 +30,14 @@
 }
 
 - (NSString*)eval:(NSString*)code {
-#define INSPECT_SCRIPT @"begin; (%@).inspect; rescue ScriptError, StandardError; 'Error: ' + ($! || 'exception raised'); end"
 
-	VALUE obj;
 	int state;
-	obj = rb_eval_string_protect([[NSString stringWithFormat:INSPECT_SCRIPT, code] UTF8String],
-									&state);
+	VALUE obj = rb_eval_string_protect([[NSString stringWithFormat:INSPECT_SCRIPT, code] UTF8String], &state);
 	//rb_p(obj);
 	
-	NSString *result;
+	NSString *result = nil;
 	if (state == 0) {
-		result = [NSString stringWithCString:StringValuePtr(obj) 
-										  encoding:NSUTF8StringEncoding];
+		result = [NSString stringWithCString:StringValuePtr(obj) encoding:NSUTF8StringEncoding];
 	} else {
 		result = @"exception raised"; 
 	}
