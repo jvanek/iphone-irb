@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	contentDidChange = NO;
 }
 
 - (void)viewDidUnload {
@@ -43,17 +42,23 @@
 	[super viewWillAppear:animated];
 	self.titleTextField.text = self.script.title;
 	self.contentTextView.text = self.script.content;
+	contentDidChange = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-
-	if (contentDidChange) self.script.content = self.contentTextView.text;
-
 	NSError *err = nil;
-	if ([self.managedObjectContext hasChanges]) {
-		self.script.modifDate = [NSDate date];
-		[self.managedObjectContext save:&err];
+	if (contentDidChange) {
+		self.script.title = self.titleTextField.text;
+		self.script.content = self.contentTextView.text;
+		if ([self.managedObjectContext hasChanges]) {
+			LOG_DEBUG(@"saving changes");
+			self.script.modifDate = [NSDate date];
+			if (![self.managedObjectContext save:&err]) {
+				if (err != nil) LOG_ERROR(@"error saving script %@: %@", self.script.title, [err localizedDescription]);
+				else LOG_ERROR(@"error saving script %@", self.script.title);
+			} else [self.managedObjectContext processPendingChanges];
+		}
 	}
 }
 
@@ -63,11 +68,19 @@
 	}
 }
 
+#pragma mark - UITextField delegate
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	self.script.title = textField.text;
 	[textField resignFirstResponder];
 	return YES;
 }
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+	if (!contentDidChange) contentDidChange = YES;
+	return YES;
+}
+
+#pragma mark - UITextView delegate
 
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {
 	[textView resignFirstResponder];

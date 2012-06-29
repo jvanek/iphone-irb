@@ -138,8 +138,11 @@
 
 - (void)addNewScript:(UIBarButtonItem *)sender {
 	[NSEntityDescription insertNewObjectForEntityForName:SCRIPT_ENTITY_NAME inManagedObjectContext:self.managedObjectContext];
-	[self reloadData];
-	[self.tableView reloadData];
+	NSError *err = nil;
+	if (![self.managedObjectContext save:&err]) {
+		if (err != nil) LOG_ERROR(@"error saving new script: %@", [err localizedDescription]);
+		else LOG_ERROR(@"error saving new script");
+	} else [self.managedObjectContext processPendingChanges];
 }
 
 - (void)reloadData {

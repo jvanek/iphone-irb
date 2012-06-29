@@ -37,10 +37,10 @@
 
 // Utilities
 #define IS_EMPTY_STRING(string) ((string) == nil || [(string) length] == 0)
-#define LOG_DEBUG(fmt,...) NSLog((@"DEBUG %s : " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
-#define LOG_INFO(fmt,...) NSLog((@"INFO  %s : " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
-#define LOG_WARN(fmt,...) NSLog((@"WARN  %s : " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
-#define LOG_ERROR(fmt,...) NSLog((@"ERROR %s : " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__)
+#define LOG_DEBUG(fmt,...) NSLog((@"DEBUG %s(%d) : " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define LOG_INFO(fmt,...) NSLog((@"INFO  %s(%d) : " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define LOG_WARN(fmt,...) NSLog((@"WARN  %s(%d) : " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define LOG_ERROR(fmt,...) NSLog((@"ERROR %s(%d) : " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
 // Strings
 #define IS_NOT_EMPTY_STRING(str) ((str != nil) && ([str length] > 0))
