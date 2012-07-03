@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.navigationItem.title = LOCALIZED_STRING(@"Results");
 }
 
 - (void)viewDidUnload {

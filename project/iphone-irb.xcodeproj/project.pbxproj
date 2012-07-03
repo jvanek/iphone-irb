@@ -20,6 +20,7 @@
 		8D5499780F34AB5100001578 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D5499760F34AB5100001578 /* icon.png */; };
 		D839E37C159E428C008A2B0C /* ScriptListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D839E37B159E428C008A2B0C /* ScriptListViewCell.m */; };
 		D8D1510315A2D5A900C4E108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8D1510515A2D5A900C4E108 /* Localizable.strings */; };
+		D8D1511015A2E20A00C4E108 /* UIButton+EasyTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D1510F15A2E20A00C4E108 /* UIButton+EasyTitle.m */; };
 		D8D6A144159DD09C0074C263 /* Irb-iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D6A143159DD09C0074C263 /* Irb-iphone.storyboard */; };
 		D8D6A14D159DD3400074C263 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D6A14C159DD3400074C263 /* icon@2x.png */; };
 		D8D6A150159DD3BE0074C263 /* icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D6A14E159DD3BD0074C263 /* icon-ipad.png */; };
@@ -62,6 +63,8 @@
 		D839E37B159E428C008A2B0C /* ScriptListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptListViewCell.m; sourceTree = "<group>"; };
 		D8D1510415A2D5A900C4E108 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D8D1510615A2DB5B00C4E108 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D8D1510E15A2E20A00C4E108 /* UIButton+EasyTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EasyTitle.h"; sourceTree = "<group>"; };
+		D8D1510F15A2E20A00C4E108 /* UIButton+EasyTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EasyTitle.m"; sourceTree = "<group>"; };
 		D8D6A143159DD09C0074C263 /* Irb-iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Irb-iphone.storyboard"; path = "Resources/Irb-iphone.storyboard"; sourceTree = "<group>"; };
 		D8D6A14C159DD3400074C263 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		D8D6A14E159DD3BD0074C263 /* icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-ipad.png"; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 			children = (
 				D8D6A165159DEA3F0074C263 /* Eos */,
 				D8D6A181159DEEF90074C263 /* View Controllers */,
+				D8D1510D15A2E1E800C4E108 /* Tools */,
 				1D3623240D0F684500981E51 /* IrbAppDelegate.h */,
 				1D3623250D0F684500981E51 /* IrbAppDelegate.m */,
 			);
@@ -244,6 +248,15 @@
 			name = "Script List View Cell";
 			sourceTree = "<group>";
 		};
+		D8D1510D15A2E1E800C4E108 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D8D1510E15A2E20A00C4E108 /* UIButton+EasyTitle.h */,
+				D8D1510F15A2E20A00C4E108 /* UIButton+EasyTitle.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		D8D6A14A159DD2990074C263 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +386,7 @@
 				D8D6A19A159DFB060074C263 /* ScriptEditorViewController.m in Sources */,
 				D8D6A1A2159E06370074C263 /* ScriptEvalViewController.m in Sources */,
 				D839E37C159E428C008A2B0C /* ScriptListViewCell.m in Sources */,
+				D8D1511015A2E20A00C4E108 /* UIButton+EasyTitle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

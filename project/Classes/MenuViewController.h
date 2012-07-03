@@ -11,4 +11,7 @@
 
 @interface MenuViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UIButton *quickEvalBtn;
+@property (nonatomic, strong) IBOutlet UIButton *scriptEvalBtn;
+
 @end

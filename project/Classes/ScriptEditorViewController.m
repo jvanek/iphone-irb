@@ -24,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.navigationItem.title = LOCALIZED_STRING(@"Script Editor");
+	self.titleTextField.placeholder = LOCALIZED_STRING(@"Script title");
 }
 
 - (void)viewDidUnload {

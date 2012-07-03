@@ -1,11 +1,19 @@
 
 #import "IrbViewController.h"
 #import "EvalRuby.h"
+#import "UIButton+EasyTitle.h"
 
 
 @implementation IrbViewController
 
 @synthesize inputTextField, resultTextView;
+@synthesize evalBtn;
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	self.navigationItem.title = LOCALIZED_STRING(@"Quick Eval");
+	self.evalBtn.title = LOCALIZED_STRING(@"eval");
+}
 
 - (void)viewWillAppear:(BOOL)animated {
 	[self.inputTextField becomeFirstResponder];

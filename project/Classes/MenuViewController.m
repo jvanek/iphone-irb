@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "ScriptListViewController.h"
+#import "UIButton+EasyTitle.h"
 
 
 @interface MenuViewController ()
@@ -18,15 +19,24 @@
 
 @implementation MenuViewController
 
+@synthesize quickEvalBtn, scriptEvalBtn;
+
+- (void)dealloc {
+	self.quickEvalBtn = nil;
+	self.scriptEvalBtn = nil;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	self.navigationItem.title = LOCALIZED_STRING(@"iRuby");
+	[self.quickEvalBtn setTitleForAllStates:LOCALIZED_STRING(@"Quick Eval")];
+	[self.scriptEvalBtn setTitleForAllStates:LOCALIZED_STRING(@"Script Eval")];
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+	self.quickEvalBtn = nil;
+	self.scriptEvalBtn = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

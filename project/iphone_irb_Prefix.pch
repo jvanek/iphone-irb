@@ -27,7 +27,7 @@
 #define PATH_FOR_RESOURCE(file, ext) [MAIN_BUNDLE pathForResource:file ofType:ext]
 
 //Localization
-#define LOCALIZED_STRING(key) NSLocalizedString(key, nil)
+#define LOCALIZED_STRING(key) NSLocalizedStringFromTable(key, @"Localizable", nil)
 
 // Alert
 #define ALERT(title, message) ([APP_DELEGATE alertWithTitle:(title) andMessage:(message)])
